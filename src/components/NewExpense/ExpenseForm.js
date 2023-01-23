@@ -22,8 +22,8 @@ function ExpenseForm(props) {
   const submitHandler = (event) => {
     //Prevente to, že když se submitne button(formulář), tak se refreshne celá stránka
     event.preventDefault();
-    
-    //Objekt kterej uloží values z formuláře po submitu. 
+
+    //Objekt kterej uloží values z formuláře po submitu.
     const expenseData = {
       title: enteredTitle,
       amount: enteredAmount,
@@ -32,9 +32,9 @@ function ExpenseForm(props) {
     //Tohle pošle data nahoru do NewExpense
     props.onSaveExpenseData(expenseData);
     //Resetování values po submitu
-    setEnteredTitle(' ');
-    setEnteredAmount(' ');
-    setEnteredDate(' ');
+    setEnteredTitle(" ");
+    setEnteredAmount(" ");
+    setEnteredDate(" ");
   };
   return (
     <form onSubmit={submitHandler}>
@@ -70,6 +70,7 @@ function ExpenseForm(props) {
         </div>
       </div>
       <div className="new-expense__actions">
+        <button type="submit" onClick={props.onCancel}>Cancel</button>
         <button type="submit">Add Expense</button>
       </div>
     </form>
