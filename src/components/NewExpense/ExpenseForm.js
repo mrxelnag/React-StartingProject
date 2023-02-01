@@ -26,7 +26,7 @@ function ExpenseForm(props) {
     //Objekt kterej uloží values z formuláře po submitu.
     const expenseData = {
       title: enteredTitle,
-      amount: enteredAmount,
+      amount: +enteredAmount,
       date: new Date(enteredDate),
     };
     //Tohle pošle data nahoru do NewExpense
